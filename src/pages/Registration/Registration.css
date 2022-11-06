@@ -1,0 +1,9 @@
+.form{
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.captcha-wrapper{
+    display: flex;
+    justify-content: center;
+}
