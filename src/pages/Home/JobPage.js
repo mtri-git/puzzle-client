@@ -130,11 +130,11 @@ class JobPage extends Component {
                   <h5>Basic Job Information</h5>
                   <ul>
                     <li>
-                      Title: <span>{job.title}</span>
+                      Công việc: <span>{job.title}</span>
                     </li>
-                    <li>
+                    {/* <li>
                       Active: <span>{job.active.toString()}</span>
-                    </li>
+                    </li> */}
                     <li>
                       Blind: <span>{job.blind.toString()}</span>
                     </li>

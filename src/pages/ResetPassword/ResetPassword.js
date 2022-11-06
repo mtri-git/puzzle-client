@@ -115,7 +115,7 @@ class ResetPassword extends Component {
                             </div>
                         </div>
                         <div className="form-group row" style={{ marginTop: "2%" }}>
-                            <button type="submit" className="btn btn-dark mx-3">
+                            <button type="submit" className="btn btn-dark mx-3" style={{width:"20%"}}>
                                 <FontAwesomeIcon className="mr-3" icon={faUndo} />Reset
                             </button>
                         </div>

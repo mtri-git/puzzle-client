@@ -105,7 +105,7 @@ const UserList = () => {
                                             <option value="true">ACTIVE</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                         <button type="button submit" class="btn btn-primary" onClick={handleSearch}>Search Account</button>
                                     </div>
                                     <div class="col-md-2">

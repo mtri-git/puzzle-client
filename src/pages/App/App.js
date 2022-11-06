@@ -28,6 +28,7 @@ import Resumes from '../Resumes/Resumes';
 import AddCompanyComponent from '../AddCompany/AddCompany';
 import AddAccountComponent from '../AddAccount/AddAccount';
 import JobPage from '../Home/JobPage'
+import Page404 from '../Page404/404';
 
 class App extends Component {
     render() {
@@ -79,7 +80,7 @@ class App extends Component {
                         (<Route component={UserOrdersList} />) : (<Route component={Home} />)} /> */}
                     <Route exact path="/user/profile" render={() => localStorage.getItem("isLoggedIn") ?
                         (<Route component={UserProfile} />) : (<Route component={Home} />)} />
-                    <Route path="*" component={Home} />
+                <Route path="*" component={Page404} />
                 </Switch>
                 <Footer />
             </div>
