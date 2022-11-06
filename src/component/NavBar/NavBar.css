@@ -3,12 +3,17 @@
 
 }
 .content{
+    background-color: white;
+    padding-bottom: 1rem;
+}
+
+.navbar-wrapper{
     background-color: #22277A;
     padding-bottom: 1rem;
 }
 
 #navbar-main a {
-    font-size: large;
+    font-size: 1.1rem;
     font-weight: 300;
     color: #B9BFFF;
     transition: .3s;
@@ -47,6 +52,7 @@
 }
 
 .search-box{
+    text-align: center;
     border-radius: 100px 0px 0px 100px;
     border-color: #22277A;
     height: 2.5rem;

@@ -73,7 +73,7 @@ class NavBar extends Component {
 
         return (
             <div className="content">
-                <Container fluid>
+                <Container fluid className='navbar-wrapper'>
                     <Row>
                         <Col xl={1}>
                             <div className='logo-wrapper'>

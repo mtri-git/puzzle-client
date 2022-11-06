@@ -110,10 +110,10 @@ class JobPage extends Component {
                   <h5 className="mb-3 mr-5">Employer Details</h5>
                   <ul>
                     <li>
-                      First Name: <span>{employer.data.firstname}</span>
+                      Họ và tên: <span>{`${employer.data.lastname} ${employer.data.firstname} `}</span>
                     </li>
                     <li>
-                      Last Address: <span>{employer.data.lastname}</span>
+                      Địa chỉ: <span>{employer.data.address}</span>
                     </li>
                     <li>
                       Email: <span>{employer.data.recruitmentEmail}</span>
