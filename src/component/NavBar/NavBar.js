@@ -16,7 +16,7 @@ const checkActive = (match, location) => {
     //some additional logic to verify you are in the home URI
     if(!location) return false;
     const {pathname} = location;
-    console.log(pathname);
+    console.log("Path: ",pathname);
     return pathname === "/";
 }
 
@@ -94,9 +94,9 @@ class NavBar extends Component {
                                                 <NavLink to={{ pathname: "/menu", state: { id: "all" } }}>
                                                     <span className="nav-link pl-5 pr-5 header-link">Việc làm</span></NavLink>
                                             </li>
-                                            <li className="nav-item ">
+                                            {/* <li className="nav-item ">
                                                 <NavLink to={"/contacts"}><span className="nav-link pl-5 pr-5 header-link">Công ty</span></NavLink>
-                                            </li>
+                                            </li> */}
                                             <li className="nav-item ">
                                                 <NavLink to={"/resumes"}><span className="nav-link pl-5 pr-5 header-link">Cv</span></NavLink>
                                             </li>
@@ -116,12 +116,12 @@ class NavBar extends Component {
                             </div>
                         </Col>
                     </Row>
-                        <div className='search-group' style={{marginLeft: "auto", marginRight: "auto"}}>
+                        {/* <div className='search-group' style={{marginLeft: "auto", marginRight: "auto"}}>
                             <input className='search-box' placeholder='Nhập công việc bạn cần tìm ...'/>
                             <button className='search-button'>
-                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <i className="fa fa-search" aria-hidden="true"></i>
                             </button>
-                        </div>
+                        </div> */}
 
                 </Container>
             </div>

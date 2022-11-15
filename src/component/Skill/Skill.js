@@ -10,21 +10,13 @@ import { useToast } from '@chakra-ui/react';
 
 import AccountNavbar from "../AccountNavbar/AccountNavbar";
 
-const Skill = () => {
+const Skill = (skillList) => {
+    let arr =Object.values(skillList)
+    let del_str=arr.join('+').replaceAll('+'||' ', '');
+    let listSkill = del_str.split(',');
     const toast = useToast();
     const [skill, setSkill] = useState("");
-    const [ skills, setSkills ] = useState([
-        {
-            id: 1,
-            name: "JavaScript",
-        },
-        {
-            id: 2,
-            name: "ReactJS",
-        }
-    ]);
-
-    console.log(skills);
+    const [ skills, setSkills ] = useState(listSkill);
 
     const handleSubmit = (e) => {
         e.preventDefault();

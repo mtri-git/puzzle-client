@@ -66,7 +66,7 @@ export const registration = (data) => async (dispatch) => {
     try {
         const response = await axios({
             method: "POST",
-            url: API_BASE_URL + "/user",
+            url: API_BASE_URL + "/common/register",
             data: data,
             headers: {
                 "Content-Type": "multipart/form-data",

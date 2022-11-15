@@ -29,7 +29,7 @@ export default ({ job, classValue }) => {
               <strong> {employer}</strong>
             </li>
             <li>
-              <Link to={`/job-post/get-one/${job.id}`} className="job-title">
+              <Link to={`/common/job-post/get-one/${job.id}`} className="job-title">
                 {job.title}
               </Link>
             </li>

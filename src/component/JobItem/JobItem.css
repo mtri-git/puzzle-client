@@ -1,0 +1,10 @@
+.button-container{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+.job-content{
+    padding: 0px;
+}

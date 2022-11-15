@@ -1,41 +1,16 @@
-const perfumer = [
-    {"name": "Burberry"},
-    {"name": "Bvlgari"},
-    {"name": "Calvin Klein"},
-    {"name": "Carolina Herrera"},
-    {"name": "Chanel"},
-    {"name": "Creed"},
-    {"name": "Dior"},
-    {"name": "Dolce&Gabbana"},
-    {"name": "Este Lauder"},
-    {"name": "Giorgio Armani"},
-    {"name": "Givency"},
-    {"name": "Gucci"},
-    {"name": "Guerlain"},
-    {"name": "Hermes"},
-    {"name": "Hugo Boss"},
-    {"name": "Jean Paul Gaultier"},
-    {"name": "Lancome"},
-    {"name": "Nina Ricci"},
-    {"name": "Paco Rabanne"},
-    {"name": "Prada"},
-    {"name": "Tom Ford"},
-    {"name": "Valentino"},
-    {"name": "Versace"},
-    {"name": "Victoria`s Secret"},
+const employmentType = [
+    {"name": "FULL_TIME", "label":"FULL_TIME"},
+    {"name": "PART_TIME", "label":"PART_TIME"},
+    {"name": "INTERNSHIP", "label":"INTERNSHIP"},
+    {"name": "FREELANCE", "label":"FREELANCE"},
 ]
 
-const gender = [
-    {"name": "male", "label": "для женщин"},
-    {"name": "female", "label": "для мужчин"},
+const minBuget = [
+    {"id": 1, "name": "any", "value":0},
+    {"id": 2, "name": "150$", "value":150},
+    {"id": 3, "name": "250$", "value":250},
+    {"id": 4, "name": "400$", "value":400},
+    {"id": 5, "name": "900$", "value":900}
 ]
 
-const price = [
-    {"id": 1, "name": "any", "array": []},
-    {"id": 2, "name": "15 - 25 $", "array": [15, 25]},
-    {"id": 3, "name": "25 - 40 $", "array": [25, 40]},
-    {"id": 4, "name": "40 - 90 $", "array": [40, 90]},
-    {"id": 5, "name": "90 - 175+ $", "array": [90, 250]}
-]
-
-export {perfumer, gender, price};
+export {employmentType, minBuget};

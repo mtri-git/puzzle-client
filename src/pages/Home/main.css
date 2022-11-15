@@ -67,6 +67,12 @@ h5 {
     }
 }
 
+.info-header{
+    position: sticky;
+    top: 0;
+    background: white;
+}
+
 /* //more than 900px devices */
 @media (min-width: 56.25em) {
     h1 {
@@ -1180,6 +1186,9 @@ h5 {
     color: var(--primary);
 }
 
+.basic-info-item{
+    font-size: small;
+}
 
 /* for devices smaller than 992px */
 @media screen and (max-width:992px) {

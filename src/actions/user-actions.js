@@ -7,20 +7,45 @@ import {
 } from "../utils/constants/actions-types";
 import {API_BASE_URL} from "../utils/constants/url";
 
-const BASE_REST_API_URL = 'https://puzzle-ute.herokuapp.com/api';
-// const BASE_REST_API_URL = 'https://puzzle-ute.herokuapp.com/api';
+const BASE_REST_API_URL = 'http://localhost:8080/api';
+// const BASE_REST_API_URL = 'http://puzzle-ute.herokuapp.com/api';
+
+const configAuth = {
+    headers: {
+        Authorization: "Bearer " + localStorage.getItem("token")
+      }
+}
 class JobPostService {
 
     getAllJobPosts() {
-        return axios.get(BASE_REST_API_URL + "/job-post/get-all")
+        return axios.get(BASE_REST_API_URL + "/common/job-post/get-all")
+    }
+
+    getJobPostAppliedByCandidate(){
+        return axios.get(BASE_REST_API_URL + "/candidate/get-job-post-applied", {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token")
+            }
+          })
+    }
+
+    getJobPostCreateByEmployer(){
+        return axios.get(BASE_REST_API_URL + "/employer/get-all-job-post-created", {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token")
+            }
+          })
     }
 
     createJobPost(jobPost) {
-        return axios.post(BASE_REST_API_URL + "/admin/add-jobPost", jobPost)
+        return axios.post(BASE_REST_API_URL + "/employer/post-job", jobPost, {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token")
+            }})
     }
 
     getJobPostById(jobPostId) {
-        return axios.get(BASE_REST_API_URL + '/admin/get-one/' + jobPostId);
+        return axios.get(BASE_REST_API_URL + '/common/job-post/get-one/'+jobPostId);
     }
 
     getJobPostByKeyWordAndStatus(keyword, status) {
@@ -28,16 +53,86 @@ class JobPostService {
     }
 
     updateJobPost(jobPost) {
-        return axios.put(BASE_REST_API_URL + '/admin/update-info-jobPost', jobPost);
+        return axios.put(BASE_REST_API_URL + '/employer/update-job-post', jobPost, {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token")
+            }});
     }
-
+                                                                                                                                               
     deleteJobPost(jobPostId) {
-        return axios.delete(BASE_REST_API_URL + '/jobPost/' + jobPostId);
+        console.log('id: ', jobPostId);
+        return axios.delete(BASE_REST_API_URL + '/employer/delete-job-post/' + jobPostId, {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token")
+            }});
     }
 
 }
 
 export const JobPostServiceIml = new JobPostService();
+
+class ExperienceService {
+
+    getAllJobPosts() {
+        return axios.get(BASE_REST_API_URL + "/job-post/get-all")
+    }
+
+    getExperienceByCandidate(){
+        return axios.get(BASE_REST_API_URL + "/candidate/get-experience", {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token")
+            }
+          })
+    }
+
+    getJobPostCreateByEmployer(){
+        return axios.get(BASE_REST_API_URL + "/employer/get-all-job-post-created", {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token")
+            }
+          })
+    }
+
+    getAppliedJobPost(){
+        return axios.get(BASE_REST_API_URL + "/employer/get-all-job-post-created", {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token")
+            }
+          })
+    }
+
+    createExperience(experience) {
+        return axios.post(BASE_REST_API_URL + "/candidate/add-experience", experience, {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token")
+            }})
+    }
+
+    getJobPostById(jobPostId) {
+        return axios.get(BASE_REST_API_URL + '/common/job-post/get-one/'+jobPostId);
+    }
+
+    getJobPostByKeyWordAndStatus(keyword, status) {
+        return axios.get(BASE_REST_API_URL + '/search?' + 'keyword=' + keyword + '&status=' + status);
+    }
+
+    updateExperience(experience) {
+        return axios.put(BASE_REST_API_URL + '/candidate/update-experience', experience, {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token")
+            }});
+    }
+                                                                                                                                               
+    deleteExperience(experienceId) {
+        return axios.get(BASE_REST_API_URL + '/candidate/delete-experience/' + experienceId,  {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token")
+            }});
+    }
+
+}
+
+export const ExperienceServiceIml = new ExperienceService();
 
 export const updateUserInfo = (userData, history) => async (dispatch) => {
     axios({

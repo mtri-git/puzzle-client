@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { faList, faLock, faUsers, faHistory, faHouseUser, faStickyNote } from "@fortawesome/free-solid-svg-icons";
+import { faList, faLock, faUsers, faHistory, faHouseUser, faStickyNote, faKeyboard } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../pages/Menu/MenuStyle.css";
-import UserProfile from "../Profile/UserProfile";
 
 const AccountNavbar = () => {
     return (
@@ -42,8 +41,12 @@ const AccountNavbar = () => {
                 : (localStorage.getItem("userRole") === "EMPLOYER") ?
                     <ul className="list-unstyled ">
                         <li className="mb-2">
-                            <Link to={"/user/jobPost/alll"} className="nav-link mx-3">
-                                <FontAwesomeIcon className="mr-2" icon={faList} />List of all jobPost</Link>
+                            <Link to={"/employer/jobs"} className="nav-link mx-3">
+                                <FontAwesomeIcon className="mr-2" icon={faList} />List of all JobPost</Link>
+                        </li>
+                        <li className="mb-2">
+                            <Link to={"/employer/jobPost/new"} className="nav-link mx-3">
+                                <FontAwesomeIcon className="mr-2" icon={faKeyboard} />Create new JobPost</Link>
                         </li>
                         <li className="mb-2">
                             <Link to={"/user/editPassword"} className="nav-link mx-3">
@@ -57,8 +60,8 @@ const AccountNavbar = () => {
                     : (localStorage.getItem("userRole") === "CANDIDATE") ?
                         <ul className="list-unstyled ">
                             <li className="mb-2">
-                                <Link to={"/user/jobs"} className="nav-link mx-3">
-                                    <FontAwesomeIcon className="mr-2" icon={faHistory} />History</Link>
+                                <Link to={"/candidate/jobs"} className="nav-link mx-3">
+                                    <FontAwesomeIcon className="mr-2" icon={faHistory} />View Applied Jobs</Link>
                             </li>
                             <li className="mb-2">
                                 <Link to={"/user/editPassword"} className="nav-link mx-3">

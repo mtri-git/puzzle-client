@@ -10,6 +10,8 @@ const usePagination = (initialState) => {
     const [currentPage, setCurrentPage] = useState(startFrom <= pages ? startFrom : 1);
     const [slicedData, setSlicedData] = useState([...filteredData].slice((currentPage - 1) * perPage, currentPage * perPage));
 
+    console.log("slide data",filteredData);
+
     useEffect(() => {
         setSlicedData([...filteredData].slice((currentPage - 1) * perPage, currentPage * perPage));
 

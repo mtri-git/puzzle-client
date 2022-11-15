@@ -32,7 +32,12 @@ const Home = () => {
             {/* <HomePageTheme /> */}
             {/* <SliderCards /> */}
             {/* <JobBoxSm/> */}
-
+        <div className='search-group' style={{marginLeft: "auto", marginRight: "auto"}}>
+            <input className='search-box' placeholder='Nhập công việc bạn cần tìm ...'/>
+            <button className='search-button'>
+            <i className="fa fa-search" aria-hidden="true"></i>
+            </button>
+        </div>
             {!loading ? (
                 <HotJobs jobs={jobs} />
             ) : (

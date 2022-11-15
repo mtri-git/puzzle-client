@@ -1,0 +1,80 @@
+:root {
+    --main-color: #805AD5;
+    --secondary-color: violet;
+}
+
+.main-color{
+    background-color: white;
+    color: var(--main-color);
+    font-size: bold;
+    border-color: var(--main-color);
+    border-radius: 10px;
+}
+
+.action-button{
+    background-color: var(--main-color);
+    color: white;
+    font-size: bold;
+    border-color: var(--main-color);
+    border-radius: 10px;
+}
+
+.action-button:hover{
+    background-color: var(--secondary-color);
+
+}
+
+.input-field{
+    margin-left: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    text-indent: 10px
+}
+
+#add-skill-button {
+    background-color: var(--main-color);
+    margin-left: 20px;
+    color: white;
+    border-radius: 10px;
+    border: 0
+}
+
+#add-skill-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.show-tag {
+    background-color: var(--main-color);
+    padding-left: 2px;
+    padding-right: 2px;
+    color: white;
+    border-radius: 10px;
+}
+
+.delete-tag {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    color: white;
+}
+
+.delete-skill:hover {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    color: var(--secondary-color);
+}
+
+#delete-button {
+    background: white;
+    border-color: red;
+    border-radius: 10%;
+    color: red;
+    border-style: solid;
+    margin-left: 10px;
+}
+
+#delete-button:hover{
+    border-color: rgb(246, 103, 103);
+    color: rgb(246, 103, 103);
+}

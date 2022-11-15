@@ -16,7 +16,10 @@ const UserList = () => {
     const isAdmin = localStorage.getItem("userRole") === "ADMIN";
     const [accounts, setAccounts] = useState([]);
     useEffect(() => {
-        AccountServiceIml.getAllAccounts().then((response) => { setAccounts(response.data.data) });
+        AccountServiceIml.getAllAccounts().then((response) => { 
+            setAccounts(response.data.data);
+            console.log("res:",response.data); 
+        });
     }, [])
 
     const [keyword, setKeyword] = useState('');
@@ -53,7 +56,7 @@ const UserList = () => {
             setChecked(updatedList);
         })
     }
-    const accountList = accounts.map(account => {
+    const accountList = accounts?.map(account => {
         return <tr key={account.id}>
             <td><input type="checkbox" disabled={account.active == false ? false : true} value={account.id} onChange={handleCheck}></input></td>
             <td style={{ whiteSpace: 'nowrap' }}><Link to={"/admin/accounts/addOrUpdateAccount/" + account.id} >{account.id}</Link></td>
@@ -62,11 +65,11 @@ const UserList = () => {
             {/* <td>{account.password}</td> */}
             <td>{account.phone}</td>
             <td>{account.avatar}</td>
-            <td>{account.isOnline == false ? "INACTIVE" : "ACTIVE"}</td>
+            <td>{account.isOnline == false ? "🕛" : "✅"}</td>
             {/* <td>{account.joinDate}</td>
             <td>{account.lastOnline}</td> */}
             <td>{account.active == false ? "INACTIVE" : "ACTIVE"}</td>
-            <td>{account.roleCodes}</td>
+            <td>{account.roleCodes.join(',')}</td>
             {/* <td>{account.followingCandidate.length}</td>
             <td>{account.jobPostEntities.length}</td> */}
             <td style={{ textAlign: 'right' }}>
@@ -134,7 +137,7 @@ const UserList = () => {
                                         <th width="7%">Online</th>
                                         {/* <th width="5%">Join Date</th>
                                         <th width="5%">Last Online</th> */}
-                                        <th width="7%">Status</th>
+                                        <th width="10%">Status</th>
                                         <th width="15%">Role</th>
                                         <th width="7%">Delete</th>
                                     </tr>

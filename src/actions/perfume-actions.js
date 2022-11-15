@@ -46,10 +46,10 @@ export const fetchPerfumesByPerfumer = (perfumer) => async (dispatch) => {
 };
 
 export const fetchPerfumesByFilterParams = (filter) => async (dispatch) => {
-    const response = await axios.post(API_BASE_URL + "/menu/search", filter);
-
+    const response = await axios.post(API_BASE_URL + "/common/job-post-filter", filter);
+    console.log('response filter: ', response);
     dispatch({
         type: FETCH_PERFUMES_BY_FILTER_PARAMS,
-        payload: response.data
+        payload: response.data.data
     })
 };
